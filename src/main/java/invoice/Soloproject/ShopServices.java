@@ -6,45 +6,50 @@ import java.util.Scanner;
 
 public class ShopServices {
 	public static void shop() throws Throwable {
-		List<String> menueShopList = Arrays
-				.asList("==== Welcome to the Shop Services Menu ==== \n " + "1)  Load Data \n" + " 2)  Set Shop Name\n"
-						+ " 3)  Set Invoice Header (Tel / Fax / Email / Website \n" + " 4)  Go Back");
 
-		for (String shopSmallMenu : menueShopList) {
-			System.out.println(shopSmallMenu);
-			System.out.println("\n");
-			System.out.println("Write the number of the option you want to choose:");
-		}
-
-		Scanner scanner = new Scanner(System.in);
 		boolean goPrevious = true;
 
 		do {
-			
+			List<String> menueShopList = Arrays.asList("==== Welcome to the Shop Services Menu ==== \n "
+					+ "1)  Load Data for Shop Details \n" + " 2) Load Data for Item details \n"
+					+ " 3) Load for Customer details \n" + " 4) Load for Invoice details \n" + " 5)  Set Shop Name \n"
+					+ " 6)  Set Invoice Header (Tel / Fax / Email / Website \n" + " 7)  Go Back");
+
+			for (String shopSmallMenu : menueShopList) {
+				System.out.println(shopSmallMenu);
+				System.out.println("\n");
+				System.out.println("Write the number of the option you want to choose:");
+			}
+
+			Scanner scanner = new Scanner(System.in);
 
 			int shopMenuChoice = scanner.nextInt();
 			switch (shopMenuChoice) {
 
-			// Load/Insert Data
+			// Insert Shop Detail With user Input.
 			case 1:
-				 // Insert Shop Detail With user Input.
-				//InsertValues.insertShop();
-				
-				//Insert Items vlaues
-				InsertValues.insertItem();
-				
+				InsertValues.insertShop();
 				break;
 
+			// Insert Item Detail With user Input.
 			case 2:
+				InsertValues.insertItem();
+				break;
+
+			// Load for Customer details with user Input
+			case 3:
+				InsertValues.insertCustomerDetails();
 
 				break;
 
-			case 3:
+			// Load for Invoice details with user Input
+			case 4:
+				InsertValues.insertInvoiceDetails();
 
 				break;
 
 			// go back to the Main menu function
-			case 4:
+			case 7:
 				goPrevious = false;
 
 				break;
