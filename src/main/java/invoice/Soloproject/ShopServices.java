@@ -48,6 +48,11 @@ public class ShopServices {
 
 				break;
 
+			// Set Shop Name
+			case 5:
+				InsertValues.insertShopName();
+				break;
+
 			// go back to the Main menu function
 			case 7:
 				goPrevious = false;

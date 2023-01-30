@@ -31,10 +31,10 @@ public class createTables {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
-			String createCustomerTabelSQL = "CREATE TABLE Customer " + "(Customer_id INTEGER PRIMARY KEY IDENTITY(1,1), "
-					+ " Customer_full_name VARCHAR(250) , " + " Customer_phone_number VARCHAR (12) , "
-					+ " invoice_date Date , " + " Number_of_items INTEGER , " + " Total_amount FLOAT, "
-					+ "Paid_amount FLOAT, " + " Balance FLOAT)";
+			String createCustomerTabelSQL = "CREATE TABLE Customer "
+					+ "(Customer_id INTEGER PRIMARY KEY IDENTITY(1,1), " + " Customer_full_name VARCHAR(250) , "
+					+ " Customer_phone_number VARCHAR (12) , " + " invoice_date Date , " + " Number_of_items INTEGER , "
+					+ " Total_amount FLOAT, " + "Paid_amount FLOAT, " + " Balance FLOAT)";
 
 			stmt.executeUpdate(createCustomerTabelSQL);
 			System.out.println("Customer Table Created Successfully.. :)");
@@ -48,8 +48,7 @@ public class createTables {
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
 			String createShopTabelSQL = "CREATE TABLE Shop_detail " + "(shop_id INTEGER PRIMARY KEY IDENTITY(1,1), "
-					+ " Shop_name VARCHAR(100) , " + " Shop_tel_number VARCHAR (10) , " + " Shop_email TEXT , "
-					+ " Shop_website VARCHAR(100) ) ";
+					+ " Shop_name VARCHAR(100)) ";
 
 			stmt.executeUpdate(createShopTabelSQL);
 			System.out.println("Shop Table Created Successfully.. :)");
@@ -66,7 +65,8 @@ public class createTables {
 					+ "(Invoice_id INTEGER PRIMARY KEY IDENTITY(1,1), " + " Shop_id INTEGER, " + "Customer_id INTEGER,"
 					+ "Item_id INTEGER," + " FOREIGN KEY (Shop_id) REFERENCES Shop_detail(shop_id), "
 					+ " Invoice_date Date , " + " FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id), "
-					+ "FOREIGN KEY (Item_id) REFERENCES Product(Product_id)) ";
+					+ "FOREIGN KEY (Item_id) REFERENCES Product(Product_id)," + "Shop_tel_number VARCHAR (10) , "
+					+ " Shop_email TEXT , " + " Shop_website VARCHAR(100), " + "Shop_Fax VARCHAR(100)) ";
 
 			stmt.executeUpdate(createInvoiceTabelSQL);
 			System.out.println("Invoice details Table Created Successfully.. :)");

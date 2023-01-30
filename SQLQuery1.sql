@@ -5,7 +5,8 @@ USE InvoiceGrociares;
 Select * From Product;
 Select * From Customer;
 Select * From Shop_detail;
-Select* From Invoice_detail;
+Select * From Invoice_detail;
+
 
 
 

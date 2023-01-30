@@ -21,18 +21,9 @@ public class InsertValues {
 		System.out.println("Enter Shop Name");
 		String shop_name = scanner.next();
 
-		System.out.println("Enter Shop Telephone Number");
-		String Shop_tel_number = scanner.next();
-
-		System.out.println("Enter Shop Email");
-		String Shop_email = scanner.next();
-
-		System.out.println("Enter Shop Website");
-		String Shop_website = scanner.next();
-
+		
 		// Inserting data using SQL query
-		String inserShopSql = "insert into Shop_detail values('" + shop_name + "','" + Shop_tel_number + "','" + Shop_email + "', '"
-				+ Shop_website + "')";
+		String inserShopSql = "insert into Shop_detail values('" + shop_name + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -239,10 +230,22 @@ public class InsertValues {
 		System.out.println("Enter Invoice Date (The format should be YYYY-MM-DD)");
 		String Invoice_date = scanner.next();
 		
+		System.out.println("Enter Shop Telephone Number");
+		String Shop_tel_number = scanner.next();
+
+		System.out.println("Enter Shop Email");
+		String Shop_email = scanner.next();
+
+		System.out.println("Enter Shop Website");
+		String Shop_website = scanner.next();
 		
-		// Inserting data using SQL query
-		String insertCustomerSql = "insert into Invoice_detail values('" + Shop_id + "','" + Customer_id + "','" + Item_id + "', '"
-				+ Invoice_date+ "')";
+		System.out.println("Enter Shop Fax Number");
+		String Shop_Fax = scanner.next();
+
+		
+		
+		String insertInvoiceDetailSql = "insert into Invoice_detail values('" + Shop_id + "','" + Customer_id + "','" + Item_id + "', '"
+				+ Invoice_date + "','"+Shop_tel_number+"','"+Shop_email+"','"+	Shop_website+ "','"+Shop_Fax+"')";
 
 		// Connection class object
 		Connection con = null;
@@ -262,9 +265,9 @@ public class InsertValues {
 			Statement st = con.createStatement();
 
 			// Executing query
-			int m = st.executeUpdate(insertCustomerSql);
+			int m = st.executeUpdate(insertInvoiceDetailSql);
 			if (m >= 1)
-				System.out.println("Invoice Details Inserted successfully : " + insertCustomerSql);
+				System.out.println("Invoice Details Inserted successfully : " + insertInvoiceDetailSql);
 			else
 				System.out.println("Invoice Details Insertion failed");
 
@@ -278,5 +281,61 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertInvoiceDetails function
+	
+	public static void insertShopName() throws Throwable {
+
+		// Creating the connection using Oracle DB
+		// Note: url syntax is standard, so do grasp
+		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+
+		// Username and password to access DB
+		// Custom initialization
+		String username = "sa";
+		String password = "root";
+
+		// Entering the data
+		Scanner scanner = new Scanner(System.in);
+		
+
+		System.out.println("Enter Name");
+		String Shop_name_n = scanner.next();
+					
+		// Inserting data using SQL query
+		String insertShopNameSql = "insert into Invoice_detail values('" + Shop_name_n + "')";
+
+		// Connection class object
+		Connection con = null;
+
+		// Try block to check for exceptions
+		try {
+
+			Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			// DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=SocialFamilyTree;integratedSecurity=true;");
+			// Registering drivers
+			DriverManager.registerDriver(driver);
+
+			// Reference to connection interface
+			con = DriverManager.getConnection(connection_url, username, password);
+
+			// Creating a statement
+			Statement st = con.createStatement();
+
+			// Executing query
+			int m = st.executeUpdate(insertShopNameSql);
+			if (m >= 1)
+				System.out.println("Shop Name Inserted successfully : " + insertShopNameSql);
+			else
+				System.out.println("Shop Name Insertion failed");
+
+			// Closing the connections
+			con.close();
+		}
+
+		// Catch block to handle exceptions
+		catch (Exception ex) {
+			// Display message when exceptions occurs
+			System.err.println(ex);
+		}
+	} // End of insertShopName function
 	
 }// End of InsertValues class 
