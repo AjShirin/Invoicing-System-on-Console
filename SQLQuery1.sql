@@ -1,5 +1,14 @@
-create database MavenApi;
-USE MavenApi;
+create database InvoiceGrociares;
+
+USE InvoiceGrociares;
+
+Select * From Product;
+Select * From Customer;
+Select * From Shop_detail;
+Select* From Invoice_detail;
+
+
+
 --Creating product table--
 CREATE TABLE ITEMS(
     Item_id INTEGER PRIMARY KEY IDENTITY(1,1),

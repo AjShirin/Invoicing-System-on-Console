@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Main {
 
-	// creating function for the main menue
+	// creating function for the main menu
 	public static void Mainmenu() {
-		List<String> menu = Arrays.asList("==== Welcome to the Main Menu ==== \n" + " 1)  Create all Tables"
+		List<String> menu = Arrays.asList("==== Welcome to the Main Menu ==== \n" + " 1)  Create all Tables \n"
 				+ " 2)  Shop Settings \n" + " 3)  Manage Shop Items  \n" + " 4)  Create New Invoice \n"
 				+ " 5)  Report: Statistics (No Of Items, No of Invoices, Total Sales)\n"
 				+ " 6)  Report: All Invoices ( Invoice No, Invoice Date, Customer Name, No of items, Total, Balance)\n"
@@ -31,23 +31,33 @@ public class Main {
 
 			int Menu = sc.nextInt();
 			switch (Menu) {
-
-			// go to Shop Settings
+			
+			
 			case 1:
-				ShopServices ShopserviceObject = new ShopServices();
-				ShopserviceObject.shop();
+				
+				createTables.createItemTable();
+				
+				createTables.createCustomerTable();
+				
+				createTables.createShopTable();
+				
+				createTables.createInvoiceTable();
+				
+				
+				
+				
+							
+			break;
 
+			// Since the function is static no need for creating object for the class.
+			// Go to Shop Settings.
+			case 2:
+				ShopServices.shop();
 				break;
 
 			// go to Manage Shop Items
-			case 2:
-				ItemServices ItemserviceObject = new ItemServices();
-				ItemserviceObject.Items();
-
-				break;
-
 			case 3:
-
+				ItemServices.Items();
 				break;
 
 			case 4:
@@ -69,10 +79,11 @@ public class Main {
 			case 8:
 
 				break;
+
 			case 9:
 
 				break;
-
+		
 			// If the user entered a number that is not in the menu this message will appear
 			default:
 				System.out.println(" No such option please enetr another number");

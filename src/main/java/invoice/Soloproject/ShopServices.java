@@ -17,12 +17,12 @@ public class ShopServices {
 		}
 
 		Scanner sc = new Scanner(System.in);
-		boolean previous = true;
+		boolean goPrevious = true;
 
 		do {
 
-			int subMenu = sc.nextInt();
-			switch (subMenu) {
+			int shopMenuChoice = sc.nextInt();
+			switch (shopMenuChoice) {
 
 			case 1:
 				System.out.println("worked");
@@ -39,7 +39,7 @@ public class ShopServices {
 
 			// go back to the Main menu function
 			case 4:
-				previous = false;
+				goPrevious = false;
 
 				break;
 
@@ -49,7 +49,7 @@ public class ShopServices {
 				break;
 			}
 
-		} while (previous);
+		} while (goPrevious);
 
 	}
 }
