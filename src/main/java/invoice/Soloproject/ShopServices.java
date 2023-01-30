@@ -13,7 +13,7 @@ public class ShopServices {
 			List<String> menueShopList = Arrays.asList("==== Welcome to the Shop Services Menu ==== \n "
 					+ "1)  Load Data for Shop Details \n" + " 2) Load Data for Item details \n"
 					+ " 3) Load for Customer details \n" + " 4) Load for Invoice details \n" + " 5)  Set Shop Name \n"
-					+ " 6)  Set Invoice Header (Tel / Fax / Email / Website \n" + " 7)  Go Back");
+					+ " 6)  Set Invoice Header (Tel / Fax / Email / Website) \n" + " 7)  Go Back");
 
 			for (String shopSmallMenu : menueShopList) {
 				System.out.println(shopSmallMenu);
@@ -50,7 +50,13 @@ public class ShopServices {
 
 			// Set Shop Name
 			case 5:
-				InsertValues.insertShopName();
+				InsertValues.insertShop();
+				break;
+
+			// Set Invoice Header (Tel / Fax / Email / Website)
+			case 6:
+				InsertValues.insertInvoiceHeaderDetail();
+				
 				break;
 
 			// go back to the Main menu function

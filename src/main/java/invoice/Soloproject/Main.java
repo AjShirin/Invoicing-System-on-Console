@@ -49,6 +49,8 @@ public class Main {
 				
 				// creating Set_shop in sql.
 				//createTables.setingShopNameTable();
+				
+				createTables.createInvoiceHeader();
 								
 			break;
 

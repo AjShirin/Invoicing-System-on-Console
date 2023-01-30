@@ -18,7 +18,7 @@ public class createTables {
 				Statement stmt = conn.createStatement();) {
 			String createItemsTabelSQL = "CREATE TABLE Product " + "(Product_id INTEGER PRIMARY KEY IDENTITY(1,1), "
 					+ " Product_name VARCHAR(100) , " + " Product_unit_price FLOAT , " + " Product_quantity INTEGER , "
-					+ " Product_quantity_price FLOAT)";
+					+ " Product_quantity_price FLOAT,"+"Shop_id INTEGER,"+"FOREIGN KEY (Shop_id) REFERENCES Shop_detail(shop_id))";
 
 			stmt.executeUpdate(createItemsTabelSQL);
 			System.out.println("Item Table Created Successfully.. :)");
@@ -65,8 +65,7 @@ public class createTables {
 					+ "(Invoice_id INTEGER PRIMARY KEY IDENTITY(1,1), " + " Shop_id INTEGER, " + "Customer_id INTEGER,"
 					+ "Item_id INTEGER," + " FOREIGN KEY (Shop_id) REFERENCES Shop_detail(shop_id), "
 					+ " Invoice_date Date , " + " FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id), "
-					+ "FOREIGN KEY (Item_id) REFERENCES Product(Product_id)," + "Shop_tel_number VARCHAR (10) , "
-					+ " Shop_email TEXT , " + " Shop_website VARCHAR(100), " + "Shop_Fax VARCHAR(100)) ";
+					+ "FOREIGN KEY (Item_id) REFERENCES Product(Product_id)) ";
 
 			stmt.executeUpdate(createInvoiceTabelSQL);
 			System.out.println("Invoice details Table Created Successfully.. :)");
@@ -74,5 +73,22 @@ public class createTables {
 			e.printStackTrace();
 		}
 	}// close createInvoiceTable Function
+	
+			public static void createInvoiceHeader() throws IOException {
+		// Open a connection
+		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
+				Statement stmt = conn.createStatement();) {
+			String createInvoiceTabelSQL = "CREATE TABLE Invoice_header_detail "
+					+ "(Invoice_header_id INTEGER PRIMARY KEY IDENTITY(1,1), " + " Shop_tel_number VARCHAR (10), " + "Shop_email TEXT,"
+					+ "Shop_website VARCHAR(100)," + " FOREIGN KEY (Shop_header_id) REFERENCES Shop_detail(shop_id), "
+					+ " Shop_Fax VARCHAR(100)," + "Shop_header_id INTEGER) ";
 
+			stmt.executeUpdate(createInvoiceTabelSQL);
+			System.out.println("Invoice details Table Created Successfully.. :)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}// close createInvoiceHeader Function
+			
+			
 } // End of class create tables

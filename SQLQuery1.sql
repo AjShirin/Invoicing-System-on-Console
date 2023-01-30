@@ -2,12 +2,11 @@ create database InvoiceGrociares;
 
 USE InvoiceGrociares;
 
-Select * From Product;
-Select * From Customer;
 Select * From Shop_detail;
+Select * From Invoice_header_detail;
+Select * From Product;
 Select * From Invoice_detail;
-
-
+Select * From Customer;
 
 
 --Creating product table--

@@ -21,7 +21,6 @@ public class InsertValues {
 		System.out.println("Enter Shop Name");
 		String shop_name = scanner.next();
 
-		
 		// Inserting data using SQL query
 		String inserShopSql = "insert into Shop_detail values('" + shop_name + "')";
 
@@ -59,7 +58,7 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertShop function
-	
+
 	public static void insertItem() throws Throwable {
 
 		// Creating the connection using Oracle DB
@@ -71,26 +70,27 @@ public class InsertValues {
 		String username = "sa";
 		String password = "root";
 
-
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Enter Product Name");
 		String product_name = scanner.next();
-					
+
 		System.out.println("Enter Product unit price (The unit is OMR)");
 		Float Product_unit_price = scanner.nextFloat();
 
 		System.out.println("Enter Product quantity ");
 		Integer Product_quantity = scanner.nextInt();
-		
+
 		System.out.println("Enter Product quantity price (The unit is OMR)");
 		Float Product_quantity_price = scanner.nextFloat();
-		
-		
+
+		System.out.println("Enter Shop ID");
+		Integer Shop_id = scanner.nextInt();
+
 		// Inserting data using SQL query
-		String inserItemSql = "insert into Product values('" + product_name + "','" + Product_unit_price + "','" + Product_quantity + "', '"
-				+ Product_quantity_price + "')";
+		String inserItemSql = "insert into Product values('" + product_name + "','" + Product_unit_price + "','"
+				+ Product_quantity + "', '" + Product_quantity_price + "','" + Shop_id + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -126,7 +126,7 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertItem function
-	
+
 	public static void insertCustomerDetails() throws Throwable {
 
 		// Creating the connection using Oracle DB
@@ -143,30 +143,29 @@ public class InsertValues {
 
 		System.out.println("Enter Customer Full Name");
 		String Customer_full_name = scanner.next();
-					
+
 		System.out.println("Enter Customer phone number");
 		String Customer_phone_number = scanner.next();
 
 		System.out.println("Enter Invoice Date (The format should be YYYY-MM-DD) ");
 		String invoice_date = scanner.next();
-		
+
 		System.out.println("Enter Number of Items");
 		Integer Number_of_items = scanner.nextInt();
-		
+
 		System.out.println("Enter Total amount");
 		Float Total_amount = scanner.nextFloat();
-		
+
 		System.out.println("Enter paid amount");
 		Float Paid_amount = scanner.nextFloat();
-		
-		
+
 		System.out.println("Enter Balance");
 		Float Balance = scanner.nextFloat();
-		
-		
+
 		// Inserting data using SQL query
-		String insertCustomerSql = "insert into Customer values('" + Customer_full_name + "','" + Customer_phone_number + "','" + invoice_date + "', '"
-				+ Number_of_items + "','"+Total_amount+"','"+Paid_amount+"','"+	Balance+ "')";
+		String insertCustomerSql = "insert into Customer values('" + Customer_full_name + "','" + Customer_phone_number
+				+ "','" + invoice_date + "', '" + Number_of_items + "','" + Total_amount + "','" + Paid_amount + "','"
+				+ Balance + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -202,7 +201,7 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertCustomerDetails function
-	
+
 	public static void insertInvoiceDetails() throws Throwable {
 
 		// Creating the connection using Oracle DB
@@ -216,36 +215,21 @@ public class InsertValues {
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
-		
 
 		System.out.println("Enter Shop ID");
 		Integer Shop_id = scanner.nextInt();
-					
+
 		System.out.println("Enter Customer ID");
 		Integer Customer_id = scanner.nextInt();
-		
+
 		System.out.println("Enter Item ID");
 		Integer Item_id = scanner.nextInt();
-		
+
 		System.out.println("Enter Invoice Date (The format should be YYYY-MM-DD)");
 		String Invoice_date = scanner.next();
-		
-		System.out.println("Enter Shop Telephone Number");
-		String Shop_tel_number = scanner.next();
 
-		System.out.println("Enter Shop Email");
-		String Shop_email = scanner.next();
-
-		System.out.println("Enter Shop Website");
-		String Shop_website = scanner.next();
-		
-		System.out.println("Enter Shop Fax Number");
-		String Shop_Fax = scanner.next();
-
-		
-		
-		String insertInvoiceDetailSql = "insert into Invoice_detail values('" + Shop_id + "','" + Customer_id + "','" + Item_id + "', '"
-				+ Invoice_date + "','"+Shop_tel_number+"','"+Shop_email+"','"+	Shop_website+ "','"+Shop_Fax+"')";
+		String insertInvoiceDetailSql = "insert into Invoice_detail values('" + Shop_id + "','" + Customer_id + "','"
+				+ Item_id + "', '" + Invoice_date + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -281,8 +265,8 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertInvoiceDetails function
-	
-	public static void insertShopName() throws Throwable {
+
+	public static void insertInvoiceHeaderDetail() throws Throwable {
 
 		// Creating the connection using Oracle DB
 		// Note: url syntax is standard, so do grasp
@@ -295,13 +279,25 @@ public class InsertValues {
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
-		
 
-		System.out.println("Enter Name");
-		String Shop_name_n = scanner.next();
-					
+		System.out.println("Enter Shop Telephone Number");
+		String Shop_tel_number = scanner.next();
+
+		System.out.println("Enter Shop Email");
+		String Shop_email = scanner.next();
+
+		System.out.println("Enter Shop Website");
+		String Shop_website = scanner.next();
+
+		System.out.println("Enter Shop Fax Number");
+		String Shop_Fax = scanner.next();
+
+		System.out.println("Enter Shop ID");
+		Integer Shop_header_id = scanner.nextInt();
+
 		// Inserting data using SQL query
-		String insertShopNameSql = "insert into Invoice_detail values('" + Shop_name_n + "')";
+		String insertInvoiceHeaderDetailSql = "insert into Invoice_header_detail values('" + Shop_tel_number + "','"
+				+ Shop_email + "','" + Shop_website + "', '" + Shop_Fax + "','" + Shop_header_id + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -321,9 +317,9 @@ public class InsertValues {
 			Statement st = con.createStatement();
 
 			// Executing query
-			int m = st.executeUpdate(insertShopNameSql);
+			int m = st.executeUpdate(insertInvoiceHeaderDetailSql);
 			if (m >= 1)
-				System.out.println("Shop Name Inserted successfully : " + insertShopNameSql);
+				System.out.println("Shop Name Inserted successfully : " + insertInvoiceHeaderDetailSql);
 			else
 				System.out.println("Shop Name Insertion failed");
 
@@ -336,6 +332,6 @@ public class InsertValues {
 			// Display message when exceptions occurs
 			System.err.println(ex);
 		}
-	} // End of insertShopName function
-	
-}// End of InsertValues class 
+	} // End of insertInvoiceHeaderDetail function
+
+}// End of InsertValues class
