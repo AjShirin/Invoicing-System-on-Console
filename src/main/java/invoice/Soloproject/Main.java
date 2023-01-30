@@ -24,29 +24,29 @@ public class Main {
 
 	public static void main(String[] args) throws Throwable {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
 		do {
 			Mainmenu();
 
-			int Menu = sc.nextInt();
+			int Menu = scanner.nextInt();
 			switch (Menu) {
 			
 			
 			case 1:
 				
+				// creating Item table in sql.
 				createTables.createItemTable();
 				
+				// creating Customer table in sql.
 				createTables.createCustomerTable();
 				
+				// creating Shop table in sql.
 				createTables.createShopTable();
 				
+				// creating Invoice table in sql.
 				createTables.createInvoiceTable();
-				
-				
-				
-				
-							
+								
 			break;
 
 			// Since the function is static no need for creating object for the class.

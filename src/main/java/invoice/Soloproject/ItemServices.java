@@ -15,12 +15,13 @@ public class ItemServices {
 			System.out.println("Write the number of the option you want to choose:");
 		}
 
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		boolean goPrevious = true;
 
 		do {
+			
 
-			int itemMenuChoice = sc.nextInt();
+			int itemMenuChoice = scanner.nextInt();
 			switch (itemMenuChoice) {
 
 			case 1:

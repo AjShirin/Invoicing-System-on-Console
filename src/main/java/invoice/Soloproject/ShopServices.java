@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ShopServices {
 	public static void shop() throws Throwable {
 		List<String> menueShopList = Arrays
-				.asList("==== Welcome to the Shop Services Menu ==== \n " + " 1)  Load Data \n" + " 2)  Set Shop Name\n"
+				.asList("==== Welcome to the Shop Services Menu ==== \n " + "1)  Load Data \n" + " 2)  Set Shop Name\n"
 						+ " 3)  Set Invoice Header (Tel / Fax / Email / Website \n" + " 4)  Go Back");
 
 		for (String shopSmallMenu : menueShopList) {
@@ -16,17 +16,23 @@ public class ShopServices {
 			System.out.println("Write the number of the option you want to choose:");
 		}
 
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		boolean goPrevious = true;
 
 		do {
+			
 
-			int shopMenuChoice = sc.nextInt();
+			int shopMenuChoice = scanner.nextInt();
 			switch (shopMenuChoice) {
 
+			// Load/Insert Data
 			case 1:
-				System.out.println("worked");
-
+				 // Insert Shop Detail With user Input.
+				//InsertValues.insertShop();
+				
+				//Insert Items vlaues
+				InsertValues.insertItem();
+				
 				break;
 
 			case 2:
