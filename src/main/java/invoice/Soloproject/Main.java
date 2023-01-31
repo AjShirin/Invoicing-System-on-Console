@@ -77,11 +77,15 @@ public class Main {
 
 				break;
 
+			// Report: All Invoices ( Invoice No, Invoice Date, Customer Name, No of items, Total, Balance)
 			case 6:
+				ReportStatistic.reportAllInvoice();
 
 				break;
 
+			//  Search (1) Invoice (Search by Invoice No and Report All Invoice details with items)
 			case 7:
+				searchInvoice.getSearchInvoiceById();
 
 				break;
 
