@@ -12,7 +12,7 @@ public class ItemServices {
 		do {
 		List<String> menuItemsList = Arrays.asList(
 				"==== Welcome to the Item Services Menue ==== \n" + " 1)  Add Items \n" + " 2)  Delete Items  \n"
-						+ " 3)  Change Item Price\n" + " 4)  Report All Items \n" + " 5)  Go Back");
+						+ " 3)  Change Item Price \n" + " 4)  Report All Items \n" + " 5)  Go Back");
 		for (String itemsMenu : menuItemsList) {
 			System.out.println(itemsMenu);
 			System.out.println("\n");
@@ -38,6 +38,7 @@ public class ItemServices {
 				break;
 
 			case 3:
+				UpdateItemPrice.updateItemPriceById();
 
 				break;
 
