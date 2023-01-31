@@ -73,6 +73,7 @@ public class Main {
 
 			// Report: Statistics (No Of Items, No of Invoices, Total Sales) 
 			case 5:
+				ReportStatistic.reportStatistic();
 
 				break;
 

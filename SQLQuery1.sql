@@ -9,6 +9,9 @@ Select * From Invoice_detail;
 Select * From Customer;
 
 
+select count (*) As Total_Items, (Select count(*)from Invoice_detail) As Total_Of_Invoice, SUM (Product_quantity_price) As total_quantity_Item_Price From Product;
+
+
 --Creating product table--
 CREATE TABLE ITEMS(
     Item_id INTEGER PRIMARY KEY IDENTITY(1,1),

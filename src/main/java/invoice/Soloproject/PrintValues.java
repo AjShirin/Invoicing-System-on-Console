@@ -13,7 +13,7 @@ public class PrintValues {
 
 	public static void reportAllItems() throws Throwable {
 
-		int count = 0;
+		
 		String sql = "SELECT * FROM Product";
 		Connection con = null;
 		try {
@@ -38,7 +38,6 @@ public class PrintValues {
 						+ "Product Unit Price :" + Product_unit_price + "||" + " " + "Product Quantity Price :"
 						+ Product_quantity_price + "||" + " " + "Product Quantity :" + Product_quantity + "||" + " "
 						+ "From Shop Id " + " " + Shop_id);
-				count++;
 			}
 			con.close();
 		} catch (Exception e) {
