@@ -42,7 +42,7 @@ public class InsertValues {
 			Statement st = con.createStatement();
 
 			// Executing query
-			int m = st.executeUpdate(inserShopSql);
+			int m =st.executeUpdate(inserShopSql);
 			if (m >= 1)
 				System.out.println("Inserted successfully : " + inserShopSql);
 			else
@@ -50,7 +50,7 @@ public class InsertValues {
 
 			// Closing the connections
 			con.close();
-		}
+		} 
 
 		// Catch block to handle exceptions
 		catch (Exception ex) {
@@ -407,7 +407,7 @@ public class InsertValues {
 				System.err.println(ex);
 			}
 
-		} // End of for
+		} // End of for loop
 
 	}// End of addItems function
 

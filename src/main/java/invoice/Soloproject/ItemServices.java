@@ -31,7 +31,9 @@ public class ItemServices {
 
 				break;
 
+			// Delete Items by user Input where they select the item ID
 			case 2:
+				DeleteValue.deletePoductById();
 
 				break;
 
