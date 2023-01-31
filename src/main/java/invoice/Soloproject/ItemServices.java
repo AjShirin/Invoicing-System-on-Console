@@ -25,8 +25,9 @@ public class ItemServices {
 			int itemMenuChoice = scanner.nextInt();
 			switch (itemMenuChoice) {
 
+			// Add Items based on user input
 			case 1:
-				System.out.println("worked");
+				InsertValues.addItems();
 
 				break;
 

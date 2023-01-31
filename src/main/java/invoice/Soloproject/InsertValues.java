@@ -306,7 +306,6 @@ public class InsertValues {
 		try {
 
 			Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-			// DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=SocialFamilyTree;integratedSecurity=true;");
 			// Registering drivers
 			DriverManager.registerDriver(driver);
 
@@ -333,5 +332,84 @@ public class InsertValues {
 			System.err.println(ex);
 		}
 	} // End of insertInvoiceHeaderDetail function
+	
+	public static void addItems() throws Throwable {
+		Scanner userItemChoice = new Scanner(System.in);
+		int number;
+
+		// Creating the connection using Oracle DB
+		// Note: url syntax is standard, so do grasp
+		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+
+		// Username and password to access DB
+		// Custom initialization
+		String username = "sa";
+		String password = "root";
+
+		System.out.println("Enter the number of Items you want to add: ");
+		number = userItemChoice.nextInt();
+		// for loop starts from 1 and the loops until the condition is met.
+		for (int i = 1; i <= number; i++) {
+			// Entering the data
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Enter Product Name");
+			String product_name = scanner.next();
+
+			System.out.println("Enter Product unit price (The unit is OMR)");
+			Float Product_unit_price = scanner.nextFloat();
+
+			System.out.println("Enter Product quantity ");
+			Integer Product_quantity = scanner.nextInt();
+
+			System.out.println("Enter Product quantity price (The unit is OMR)");
+			Float Product_quantity_price = scanner.nextFloat();
+
+			System.out.println("Enter Shop ID");
+			Integer Shop_id = scanner.nextInt();
+
+			// Inserting data using SQL query
+			String inserItemSql = "insert into Product values('" + product_name + "'," + Product_unit_price + ","
+					+ Product_quantity + ", " + Product_quantity_price + "," + Shop_id + ")";
+			
+			//System.out.println("Adding another Item! \n");
+
+			// Connection class object
+			Connection con = null;
+
+			// Try block to check for exceptions
+			try {
+
+				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+				// DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=SocialFamilyTree;integratedSecurity=true;");
+				// Registering drivers
+				DriverManager.registerDriver(driver);
+
+				// Reference to connection interface
+				con = DriverManager.getConnection(connection_url, username, password);
+
+				// Creating a statement
+				Statement st = con.createStatement();
+
+				// Executing query
+				int m = st.executeUpdate(inserItemSql);
+				if (m >= 1)
+					System.out.println("Products Inserted successfully : " + inserItemSql);
+				else
+					System.out.println("Products Insertion failed");
+
+				// Closing the connections
+				con.close();
+			}
+
+			// Catch block to handle exceptions
+			catch (Exception ex) {
+				// Display message when exceptions occurs
+				System.err.println(ex);
+			}
+
+		} // End of for
+
+	}// End of addItems function
+
 
 }// End of InsertValues class
