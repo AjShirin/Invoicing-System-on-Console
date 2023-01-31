@@ -89,8 +89,8 @@ public class InsertValues {
 		Integer Shop_id = scanner.nextInt();
 
 		// Inserting data using SQL query
-		String inserItemSql = "insert into Product values('" + product_name + "','" + Product_unit_price + "','"
-				+ Product_quantity + "', '" + Product_quantity_price + "','" + Shop_id + "')";
+		String inserItemSql = "insert into Product values('" + product_name + "'," + Product_unit_price + ","
+				+ Product_quantity + ", " + Product_quantity_price + "," + Shop_id + ")";
 
 		// Connection class object
 		Connection con = null;
@@ -164,8 +164,8 @@ public class InsertValues {
 
 		// Inserting data using SQL query
 		String insertCustomerSql = "insert into Customer values('" + Customer_full_name + "','" + Customer_phone_number
-				+ "','" + invoice_date + "', '" + Number_of_items + "','" + Total_amount + "','" + Paid_amount + "','"
-				+ Balance + "')";
+				+ "','" + invoice_date + "', " + Number_of_items + "," + Total_amount + "," + Paid_amount + ","
+				+ Balance + ")";
 
 		// Connection class object
 		Connection con = null;
@@ -228,8 +228,8 @@ public class InsertValues {
 		System.out.println("Enter Invoice Date (The format should be YYYY-MM-DD)");
 		String Invoice_date = scanner.next();
 
-		String insertInvoiceDetailSql = "insert into Invoice_detail values('" + Shop_id + "','" + Customer_id + "','"
-				+ Item_id + "', '" + Invoice_date + "')";
+		String insertInvoiceDetailSql = "insert into Invoice_detail values(" + Shop_id + "," + Customer_id + ","
+				+ Item_id + ", '" + Invoice_date + "')";
 
 		// Connection class object
 		Connection con = null;
@@ -297,7 +297,7 @@ public class InsertValues {
 
 		// Inserting data using SQL query
 		String insertInvoiceHeaderDetailSql = "insert into Invoice_header_detail values('" + Shop_tel_number + "','"
-				+ Shop_email + "','" + Shop_website + "', '" + Shop_Fax + "','" + Shop_header_id + "')";
+				+ Shop_email + "','" + Shop_website + "', '" + Shop_Fax + "'," + Shop_header_id + ")";
 
 		// Connection class object
 		Connection con = null;
@@ -368,7 +368,7 @@ public class InsertValues {
 			Integer Shop_id = scanner.nextInt();
 
 			// Inserting data using SQL query
-			String inserItemSql = "insert into Product values('" + product_name + "'," + Product_unit_price + ","
+			String inserItemByUserInputSql = "insert into Product values('" + product_name + "'," + Product_unit_price + ","
 					+ Product_quantity + ", " + Product_quantity_price + "," + Shop_id + ")";
 			
 			//System.out.println("Adding another Item! \n");
@@ -391,9 +391,9 @@ public class InsertValues {
 				Statement st = con.createStatement();
 
 				// Executing query
-				int m = st.executeUpdate(inserItemSql);
+				int m = st.executeUpdate(inserItemByUserInputSql);
 				if (m >= 1)
-					System.out.println("Products Inserted successfully : " + inserItemSql);
+					System.out.println("Products Inserted successfully : " + inserItemByUserInputSql);
 				else
 					System.out.println("Products Insertion failed");
 
