@@ -65,10 +65,13 @@ public class Main {
 				ItemServices.Items();
 				break;
 
+			// Create New Invoice
 			case 4:
+				InsertValues.insertInvoiceDetails();
 
 				break;
 
+			// Report: Statistics (No Of Items, No of Invoices, Total Sales) 
 			case 5:
 
 				break;

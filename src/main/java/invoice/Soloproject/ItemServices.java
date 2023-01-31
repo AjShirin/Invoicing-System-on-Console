@@ -37,12 +37,15 @@ public class ItemServices {
 
 				break;
 
+			// Change Item Price By User Input
 			case 3:
 				UpdateItemPrice.updateItemPriceById();
 
 				break;
 
+			// Report All Items
 			case 4:
+				PrintValues.reportAllItems();
 
 				break;
 
