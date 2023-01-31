@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ShopServices {
 	public static void shop() throws Throwable {
 
-		boolean goPrevious = true;
+		boolean closeMenuShopList = true;
 
 		do {
 			List<String> menueShopList = Arrays.asList("==== Welcome to the Shop Services Menu ==== \n "
@@ -61,7 +61,7 @@ public class ShopServices {
 
 			// go back to the Main menu function
 			case 7:
-				goPrevious = false;
+				closeMenuShopList = false;
 
 				break;
 
@@ -71,7 +71,7 @@ public class ShopServices {
 				break;
 			}
 
-		} while (goPrevious);
+		} while (closeMenuShopList);
 
 	}
 }

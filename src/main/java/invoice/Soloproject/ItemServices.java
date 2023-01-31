@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ItemServices {
 	public static void Items() throws Throwable {
 		
-		boolean goPrevious = true;
+		boolean closeMenuItemList = true;
 		
 		do {
 		List<String> menuItemsList = Arrays.asList(
@@ -51,7 +51,7 @@ public class ItemServices {
 
 			// go back to the Main menu function
 			case 5:
-				goPrevious = false;
+				closeMenuItemList = false;
 
 				break;
 
@@ -62,7 +62,7 @@ public class ItemServices {
 
 			}
 
-		} while (goPrevious);
+		} while (closeMenuItemList);
 
 	}
 }
