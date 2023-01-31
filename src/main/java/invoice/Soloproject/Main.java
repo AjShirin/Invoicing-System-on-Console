@@ -1,10 +1,12 @@
 package invoice.Soloproject;
 
 import java.util.Scanner;
+import java.util.Stack;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+	static Stack<Integer> historySatck = new Stack<>();
 
 	// creating function for the main menu
 	public static void Mainmenu() {
@@ -34,6 +36,7 @@ public class Main {
 			switch (Menu) {
 
 			case 1:
+				historySatck.push(1);
 
 				// creating Item table in sql.
 				createTables.createItemTable();
@@ -57,22 +60,26 @@ public class Main {
 			// Since the function is static no need for creating object for the class.
 			// Go to Shop Settings.
 			case 2:
+				historySatck.push(2);
 				ShopServices.shop();
 				break;
 
 			// go to Manage Shop Items
 			case 3:
+				historySatck.push(3);
 				ItemServices.Items();
 				break;
 
 			// Create New Invoice
 			case 4:
+				historySatck.push(4);
 				InsertValues.insertInvoiceDetails();
 
 				break;
 
 			// Report: Statistics (No Of Items, No of Invoices, Total Sales)
 			case 5:
+				historySatck.push(5);
 				ReportStatistic.reportStatistic();
 
 				break;
@@ -80,6 +87,7 @@ public class Main {
 			// Report: All Invoices ( Invoice No, Invoice Date, Customer Name, No of items,
 			// Total, Balance)
 			case 6:
+				historySatck.push(6);
 				ReportStatistic.reportAllInvoice();
 
 				break;
@@ -87,16 +95,21 @@ public class Main {
 			// Search (1) Invoice (Search by Invoice No and Report All Invoice details with
 			// items)
 			case 7:
+				historySatck.push(7);
 				searchInvoice.getSearchInvoiceById();
 
 				break;
 
 			case 8:
+				while (historySatck.empty() == false) {
+					System.out.println("The Cases that the user selected and how many time "+historySatck.pop());
+				}
 
 				break;
 
 			// Exit
 			case 9:
+				
 				System.out.println("Are you sure you want to exit? If yes press 1, if No you want to continue with the program press 0 ");
 
 				int exitUserInput = scanner.nextInt();
