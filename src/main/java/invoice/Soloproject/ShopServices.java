@@ -3,7 +3,7 @@ package invoice.Soloproject;
 import java.util.Scanner;
 
 public class ShopServices {
-	public static void shop() throws Throwable {
+	public static void shop(String connection_url, String username, String password) throws Throwable {
 
 		boolean closeMenuShopList = true;
 
@@ -19,34 +19,38 @@ public class ShopServices {
 
 			// Insert Shop Detail With user Input.
 			case 1:
-				InsertValues.insertShop();
+				
+				InsertValues.insertShop( connection_url,  username,  password);
+
 				break;
 
 			// Insert Item Detail With user Input.
 			case 2:
-				InsertValues.insertItem();
+				InsertValues.insertItem(connection_url,  username,  password);
+				
 				break;
 
 			// Load for Customer details with user Input
 			case 3:
-				InsertValues.insertCustomerDetails();
+				InsertValues.insertCustomerDetails( connection_url,  username,  password);
+				
 
 				break;
 
 			// Load for Invoice details with user Input
 			case 4:
-				InsertValues.insertInvoiceDetails();
+				InsertValues.insertInvoiceDetails( connection_url,  username,  password);
 
 				break;
 
 			// Set Shop Name
 			case 5:
-				InsertValues.insertShop();
+				InsertValues.insertShop( connection_url,  username,  password);
 				break;
 
 			// Set Invoice Header (Tel / Fax / Email / Website)
 			case 6:
-				InsertValues.insertInvoiceHeaderDetail();
+				InsertValues.insertInvoiceHeaderDetail( connection_url,  username,  password);
 				
 				break;
 

@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class searchInvoice {
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	public static void getSearchInvoiceById() {
+	public static void getSearchInvoiceById(String connection_url, String username, String password) {
 
 		Connection con = null;
 		try {

@@ -4,16 +4,19 @@ import java.sql.*;
 import java.util.*;
 
 public class InsertValues {
-	public static void insertShop() throws Throwable {
-
+	public static void insertShop(String connection_url, String username, String password) throws Throwable {
+		
 		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+		
+		
+		
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
@@ -59,16 +62,16 @@ public class InsertValues {
 		}
 	} // End of insertShop function
 
-	public static void insertItem() throws Throwable {
+	public static void insertItem(String connection_url, String username, String password) throws Throwable {
 
-		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+//		// Creating the connection using Oracle DB
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
@@ -127,16 +130,16 @@ public class InsertValues {
 		}
 	} // End of insertItem function
 
-	public static void insertCustomerDetails() throws Throwable {
+	public static void insertCustomerDetails(String connection_url, String username, String password) throws Throwable {
 
-		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+//		// Creating the connection using Oracle DB
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
@@ -202,16 +205,16 @@ public class InsertValues {
 		}
 	} // End of insertCustomerDetails function
 
-	public static void insertInvoiceDetails() throws Throwable {
+	public static void insertInvoiceDetails(String connection_url, String username, String password) throws Throwable {
 
-		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+//		// Creating the connection using Oracle DB
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
@@ -266,16 +269,16 @@ public class InsertValues {
 		}
 	} // End of insertInvoiceDetails function
 
-	public static void insertInvoiceHeaderDetail() throws Throwable {
+	public static void insertInvoiceHeaderDetail(String connection_url, String username, String password) throws Throwable {
 
-		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+//		// Creating the connection using Oracle DB
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		// Entering the data
 		Scanner scanner = new Scanner(System.in);
@@ -333,18 +336,18 @@ public class InsertValues {
 		}
 	} // End of insertInvoiceHeaderDetail function
 	
-	public static void addItems() throws Throwable {
+	public static void addItems(String connection_url, String username, String password) throws Throwable {
 		Scanner userItemChoice = new Scanner(System.in);
 		int number;
 
-		// Creating the connection using Oracle DB
-		// Note: url syntax is standard, so do grasp
-		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-
-		// Username and password to access DB
-		// Custom initialization
-		String username = "sa";
-		String password = "root";
+//		// Creating the connection using Oracle DB
+//		// Note: url syntax is standard, so do grasp
+//		String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//
+//		// Username and password to access DB
+//		// Custom initialization
+//		String username = "sa";
+//		String password = "root";
 
 		System.out.println("Enter the number of Items you want to add: ");
 		number = userItemChoice.nextInt();

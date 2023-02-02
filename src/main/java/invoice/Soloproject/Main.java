@@ -6,11 +6,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
 	static Stack<Integer> historySatck = new Stack<>();
 
 	public static void main(String[] args) throws Throwable {
-
 		Scanner scanner = new Scanner(System.in);
+		Connections conects = new Connections ();
+		System.out.println("Enter the connection_Url: ");
+		conects.setConnection_url(scanner.next());
+		
+		System.out.println("Enter the Connection Username: ");
+		conects.setUsername(scanner.next());
+		
+		System.out.println("Enter the Connection Password: ");
+		conects.setPassword(scanner.next());
 
 		boolean closeBigMenu = true;
 		do {
@@ -24,21 +33,21 @@ public class Main {
 				historySatck.push(1);
 
 				// creating Item table in sql.
-				createTables.createItemTable();
+				createTables.createItemTable(conects.getConnection_url(),conects.getUsername(), conects.getPassword() );
 
 				// creating Customer table in sql.
-				createTables.createCustomerTable();
+				createTables.createCustomerTable( conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				// creating Shop table in sql.
-				createTables.createShopTable();
+				createTables.createShopTable( conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				// creating Invoice table in sql.
-				createTables.createInvoiceTable();
+				createTables.createInvoiceTable(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				// creating Set_shop in sql.
 				// createTables.setingShopNameTable();
 
-				createTables.createInvoiceHeader();
+				createTables.createInvoiceHeader(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				break;
 
@@ -46,26 +55,26 @@ public class Main {
 			// Go to Shop Settings.
 			case 2:
 				historySatck.push(2);
-				ShopServices.shop();
+				ShopServices.shop(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 				break;
 
 			// go to Manage Shop Items
 			case 3:
 				historySatck.push(3);
-				ItemServices.Items();
+				ItemServices.Items(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 				break;
 
 			// Create New Invoice
 			case 4:
 				historySatck.push(4);
-				InsertValues.insertInvoiceDetails();
+				InsertValues.insertInvoiceDetails(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				break;
 
 			// Report: Statistics (No Of Items, No of Invoices, Total Sales)
 			case 5:
 				historySatck.push(5);
-				ReportStatistic.reportStatistic();
+				ReportStatistic.reportStatistic(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				break;
 
@@ -73,7 +82,7 @@ public class Main {
 			// Total, Balance)
 			case 6:
 				historySatck.push(6);
-				ReportStatistic.reportAllInvoice();
+				ReportStatistic.reportAllInvoice(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				break;
 
@@ -81,7 +90,7 @@ public class Main {
 			// items)
 			case 7:
 				historySatck.push(7);
-				searchInvoice.getSearchInvoiceById();
+				searchInvoice.getSearchInvoiceById(conects.getConnection_url(),conects.getUsername(), conects.getPassword());
 
 				break;
 

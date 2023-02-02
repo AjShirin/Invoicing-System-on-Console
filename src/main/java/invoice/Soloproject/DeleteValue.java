@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class DeleteValue {
 
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	public static void deletePoductById() throws IOException {
+	public static void deletePoductById(String connection_url, String username, String password) throws IOException {
 		Connection con = null;
 		try {
 			Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();

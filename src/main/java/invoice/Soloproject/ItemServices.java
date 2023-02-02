@@ -3,7 +3,7 @@ package invoice.Soloproject;
 import java.util.Scanner;
 
 public class ItemServices {
-	public static void Items() throws Throwable {
+	public static void Items(String connection_url, String username, String password) throws Throwable {
 		
 		boolean closeMenuItemList = true;
 		
@@ -18,25 +18,27 @@ public class ItemServices {
 
 			// Add Items based on user input
 			case 1:
-				InsertValues.addItems();
+				InsertValues.addItems( connection_url,  username,  password);
+				//Items( connection_url,  username,  password);
 
 				break;
 
 			// Delete Items by user Input where they select the item ID
 			case 2:
-				DeleteValue.deletePoductById();
+				DeleteValue.deletePoductById( connection_url,  username,  password);
+				//Items();
 
 				break;
 
 			// Change Item Price By User Input
 			case 3:
-				UpdateItemPrice.updateItemPriceById();
+				UpdateItemPrice.updateItemPriceById( connection_url,  username,  password);
 
 				break;
 
 			// Report All Items
 			case 4:
-				PrintValues.reportAllItems();
+				PrintValues.reportAllItems( connection_url,  username,  password);
 
 				break;
 

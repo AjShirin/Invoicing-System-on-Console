@@ -7,11 +7,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ReportStatistic {
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	public static void reportStatistic() throws Throwable {
+	public static void reportStatistic(String connection_url, String username, String password) throws Throwable {
 
 		String statisticReportSql = "select count (*) As Total_Items, (Select count(*)from Invoice_detail) As Total_Of_Invoice, SUM (Product_quantity_price) As Total_Sales From Product";
 
@@ -40,7 +40,7 @@ public class ReportStatistic {
 		}
 	} // End of reportStatistic Function
 
-	public static void reportAllInvoice() throws Throwable {
+	public static void reportAllInvoice(String connection_url, String username, String password) throws Throwable {
 
 		String reportAllInvoiceSql = "SELECT Invoice_detail.Invoice_id As Number_of_Invoice, Invoice_detail.Invoice_date,Customer.Customer_full_name As Customer_name ,Customer.Number_of_items,Customer.Paid_amount As Total,Customer.Balance FROM Invoice_detail JOIN Customer ON Customer.Customer_id=Invoice_detail.Invoice_id";
 

@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class UpdateItemPrice {
 
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	static void updateItemPriceById() throws IOException {
+	static void updateItemPriceById(String connection_url, String username, String password) throws IOException {
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the ID Number of the product that you want to Update :");

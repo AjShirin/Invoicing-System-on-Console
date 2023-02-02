@@ -8,11 +8,11 @@ import java.sql.Statement;
 
 public class createTables {
 
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	public static void createItemTable() throws IOException {
+	public static void createItemTable(String connection_url, String username, String password) throws IOException {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
@@ -27,7 +27,7 @@ public class createTables {
 		}
 	}// close createHotelTable Function
 
-	public static void createCustomerTable() throws IOException {
+	public static void createCustomerTable(String connection_url, String username, String password) throws IOException {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
@@ -43,7 +43,7 @@ public class createTables {
 		}
 	}// close createCustomerTable Function
 
-	public static void createShopTable() throws IOException {
+	public static void createShopTable(String connection_url, String username, String password) throws IOException {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
@@ -57,7 +57,7 @@ public class createTables {
 		}
 	}// close createShopTable Function
 
-	public static void createInvoiceTable() throws IOException {
+	public static void createInvoiceTable(String connection_url, String username, String password) throws IOException {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {
@@ -74,7 +74,7 @@ public class createTables {
 		}
 	}// close createInvoiceTable Function
 	
-			public static void createInvoiceHeader() throws IOException {
+			public static void createInvoiceHeader(String connection_url, String username, String password) throws IOException {
 		// Open a connection
 		try (Connection conn = DriverManager.getConnection(connection_url, username, password);
 				Statement stmt = conn.createStatement();) {

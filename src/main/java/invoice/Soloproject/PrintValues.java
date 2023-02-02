@@ -7,11 +7,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class PrintValues {
-	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
-	static final String username = "sa";
-	static final String password = "root";
+//	static final String connection_url = "jdbc:sqlserver://localhost:1433;databaseName=InvoiceGrociares;encrypt=true;trustServerCertificate=true";
+//	static final String username = "sa";
+//	static final String password = "root";
 
-	public static void reportAllItems() throws Throwable {
+	public static void reportAllItems(String connection_url, String username, String password) throws Throwable {
 
 		
 		String sql = "SELECT * FROM Product";
