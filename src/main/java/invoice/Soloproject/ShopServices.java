@@ -1,7 +1,5 @@
 package invoice.Soloproject;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class ShopServices {
@@ -10,20 +8,13 @@ public class ShopServices {
 		boolean closeMenuShopList = true;
 
 		do {
-			List<String> menueShopList = Arrays.asList("==== Welcome to the Shop Services Menu ==== \n "
-					+ "1)  Load Data for Shop Details \n" + " 2) Load Data for Item details \n"
-					+ " 3) Load for Customer details \n" + " 4) Load for Invoice details \n" + " 5)  Set Shop Name \n"
-					+ " 6)  Set Invoice Header (Tel / Fax / Email / Website) \n" + " 7)  Go Back");
-
-			for (String shopSmallMenu : menueShopList) {
-				System.out.println(shopSmallMenu);
-				System.out.println("\n");
-				System.out.println("Write the number of the option you want to choose:");
-			}
-
 			Scanner scanner = new Scanner(System.in);
-
+			
+			Menu.showChoice(2);
+			System.out.println("Write the number of the option you want to choose:");
 			int shopMenuChoice = scanner.nextInt();
+		
+	
 			switch (shopMenuChoice) {
 
 			// Insert Shop Detail With user Input.
